@@ -9,7 +9,7 @@
 <body>
 
     <div class="container">
-        <header>Login</header>
+        <header>HR-ERP</header>
         
         <form action="#">
             <div class="field email-field">
@@ -57,8 +57,19 @@
         </form>
     </div>
 
-    <!-- partial -->
-    <script src="./script2.js"></script>
+    <script>
+        const showHideIcons = document.querySelectorAll('.show-hide');
+        showHideIcons.forEach(icon => {
+            icon.addEventListener('click', (e) => {
+                const inputField = e.target.closest('.input-field').querySelector('input');
+                const type = inputField.type === 'password' ? 'text' : 'password';
+                inputField.type = type;
+                e.target.classList.toggle('bx-show');
+                e.target.classList.toggle('bx-hide');
+            });
+        });
+    </script>
+    
 
 </body>
 </html>
